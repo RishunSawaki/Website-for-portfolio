@@ -1,0 +1,106 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+  }
+  
+  .hero-content {
+    max-width: 1000px;
+    padding: 0 20px;
+    margin-top: 80px; /* Offset for navbar */
+  }
+  
+  .hero-subtitle {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: monospace;
+  }
+  
+  .hero-title {
+    font-size: 70px;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  
+  .hero-role {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    line-height: 1.1;
+    margin-bottom: 30px;
+  }
+  
+  .hero-description {
+    max-width: 600px;
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 50px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .primary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+  }
+  
+  .primary-btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+  }
+  
+  .secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero-title {
+      font-size: 50px;
+    }
+    
+    .hero-role {
+      font-size: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .hero-title {
+      font-size: 40px;
+    }
+    
+    .hero-role {
+      font-size: 30px;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+  }

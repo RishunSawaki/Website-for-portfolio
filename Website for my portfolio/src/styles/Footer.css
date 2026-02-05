@@ -1,0 +1,18 @@
+.footer {
+    background-color: var(--bg-color);
+    padding: 30px 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    border-top: 1px solid rgba(136, 146, 176, 0.1);
+  }
+  
+  .footer p {
+      margin-bottom: 5px;
+  }
+  
+  .built-with {
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--text-secondary);
+  }
