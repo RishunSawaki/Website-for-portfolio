@@ -17,13 +17,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <h1 className="logo">Portfolio.</h1>
+        <h1 className="logo">Portfolio</h1>
 
         {/* Desktop Menu */}
         <ul className="nav-menu">
           {links.map(({ id, link, text }) => (
             <li key={id} className="nav-item">
-              <Link to={link} smooth={true} duration={500} className="nav-link">
+              <Link to={link} smooth={true} duration={10} className="nav-link">
                 {text}
               </Link>
             </li>
@@ -44,7 +44,7 @@ const Navbar = () => {
               onClick={() => setNav(false)}
               to={link}
               smooth={true}
-              duration={500}
+              duration={10}
             >
               {text}
             </Link>
