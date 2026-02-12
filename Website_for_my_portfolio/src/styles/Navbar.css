@@ -1,3 +1,9 @@
+/* Navbar styles
+  - Fixed top navigation bar with responsive behavior.
+  - Desktop: horizontal menu (`.nav-menu`).
+  - Mobile (<=768px): hamburger icon shown and full-screen `.mobile-menu` overlay.
+*/
+
 .navbar {
     position: fixed;
     top: 0;
@@ -76,7 +82,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;

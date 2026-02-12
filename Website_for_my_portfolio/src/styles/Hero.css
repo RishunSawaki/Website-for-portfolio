@@ -1,3 +1,9 @@
+/* Hero styles
+  - Full-height hero section centered both vertically and horizontally.
+  - Contains subtitle, title, role, description, and CTA buttons.
+  - Uses responsive rules to scale typography and stack buttons on small screens.
+*/
+
 .hero {
     height: 100vh;
     display: flex;
@@ -43,6 +49,7 @@
     margin-bottom: 50px;
   }
   
+  /* Button group: horizontally aligned on desktop, stacked on small screens (see media queries). */
   .hero-buttons {
     display: flex;
     gap: 20px;

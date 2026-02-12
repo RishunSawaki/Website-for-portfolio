@@ -4,14 +4,27 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import "../styles/Hero.css";
 
+/*
+  Hero component
+  - Top section of the page (id="home") containing intro text and CTAs.
+  - Uses Framer Motion's `motion.div` to animate the content on mount (fade+slide up).
+  - Buttons use `react-scroll` to scroll to other page sections smoothly.
+*/
+
 const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-content">
+        {/*
+          Animated container (fade in and slide up on mount):
+          - `initial` defines the starting state (hidden, shifted down).
+          - `animate` defines the end state (visible, original position).
+          - `transition` sets the duration of the animation.
+        */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.0 }}
+          transition={{ duration: 0.8 }}
         >
           <p className="hero-subtitle">Hi, my name is</p>
           <h1 className="hero-title">Rishun.</h1>
