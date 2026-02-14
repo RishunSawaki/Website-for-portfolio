@@ -21,11 +21,13 @@
   border: 1px solid transparent;
 }
 
-li::marker {
+
+.about-card li::marker {
   font-size: 1.1em;
   content: '• ';
   padding: 0;
 }
+
 
 .about-card:hover {
   transform: translateY(-5px);
