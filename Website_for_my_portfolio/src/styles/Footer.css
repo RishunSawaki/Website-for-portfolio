@@ -1,4 +1,7 @@
 .footer {
+    /* Footer.css
+       Styles for the site footer and copyright text.
+    */
     background-color: var(--bg-color);
     padding: 30px 0;
     text-align: center;

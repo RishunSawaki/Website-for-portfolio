@@ -1,3 +1,9 @@
+/*
+  Contact.jsx
+  Contact section component with social links and a demo contact form.
+  `handleSubmit` currently prevents default submission and shows a demo alert.
+  Replace submission logic with EmailJS or an API call as needed.
+*/
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -20,6 +26,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+          {/* Contact section: intro text, social links, and contact form */}
           <h2 className="section-title">Get In Touch</h2>
           <p className="contact-text">
             I am currently looking for new opportunities and collaborations.

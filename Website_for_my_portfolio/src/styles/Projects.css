@@ -1,4 +1,8 @@
 .projects {
+    /* Projects.css
+       Styles for the Projects section and project cards grid.
+       Edit spacing or card appearance here.
+    */
     background-color: var(--bg-color);
   }
   

@@ -1,3 +1,8 @@
+/*
+  Projects.jsx
+  Renders a grid of project cards from the local `works` array.
+  To add a project, edit the `works` array (title, description, techStack, github, demo).
+*/
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -27,6 +32,7 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+          {/* Projects section: title + project cards grid */}
           <h2 className="section-title">My Works</h2>
           <div className="projects-grid">
             {works.map((work) => (
