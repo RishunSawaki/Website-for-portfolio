@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <p>&copy; {year} Rishun. All rights reserved.</p>
-        <p className="built-with">Built with React & Vite</p>
+        {/* <p className="built-with">Built with React & Vite</p> */}
       </div>
     </footer>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import "../styles/Projects.css";
@@ -7,10 +8,10 @@ const Projects = () => {
   const works = [
     {
       id: 1,
-      title: "My Portfolio Website",
+      title: "Portfolio Website",
       description:
-        "The website you are looking at right now. Built with React and Vite to introduce myself and showcase my future projects.",
-      techStack: ["React", "Vite", "CSS", "Framer Motion"],
+        "The website you are looking at right now. Built with React and Vite to introduce myself and showcase my projects.",
+      techStack: ["HTML", "CSS","React", "Vite", "Framer Motion"],
       github: "https://github.com/rishun", // Placeholder
       demo: "#",
     },
@@ -46,6 +47,16 @@ const Projects = () => {
                     >
                       <FaGithub size={20} /> Code
                     </a>
+
+                    <a
+                      href={work.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaExternalLinkAlt size={18} /> Live Demo
+                    </a>
+
+                    {/*}
                     {work.demo !== "#" && (
                       <a
                         href={work.demo}
@@ -55,6 +66,7 @@ const Projects = () => {
                         <FaExternalLinkAlt size={18} /> Live Demo
                       </a>
                     )}
+                    */}
                   </div>
                 </div>
               </div>
