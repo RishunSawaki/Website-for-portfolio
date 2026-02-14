@@ -37,12 +37,12 @@ const Contact = () => {
           <div className="contact-content">
             <div className="contact-info">
               <div className="social-links">
-                <a href="mailto:email@example.com" className="social-item">
+                <a href="mailto:rikomake@icloud.com" className="social-item">
                   <FaEnvelope size={24} />
                   <span>Email Me</span>
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/RishunSawaki"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-item"
@@ -51,7 +51,7 @@ const Contact = () => {
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/rishun-sawaki"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-item"
