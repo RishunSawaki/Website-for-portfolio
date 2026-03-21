@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../styles/Navbar.css";
 
@@ -32,9 +32,9 @@ const Navbar: React.FC = () => {
         <ul className="nav-menu">
           {links.map(({ id, link, text }) => (
             <li key={id} className="nav-item">
-              <Link to={link} smooth={true} duration={10} className="nav-link">
+              <ScrollLink to={link} smooth={true} duration={10} className="nav-link">
                 {text}
-              </Link>
+              </ScrollLink>
             </li>
           ))}
         </ul>
@@ -53,14 +53,14 @@ const Navbar: React.FC = () => {
       <ul className={nav ? "mobile-menu active" : "mobile-menu"}>
         {links.map(({ id, link, text }) => (
           <li key={id} className="mobile-item">
-            <Link
+            <ScrollLink
               onClick={() => setNav(false)}
               to={link}
               smooth={true}
               duration={500}
             >
               {text}
-            </Link>
+            </ScrollLink>
           </li>
         ))}
       </ul>

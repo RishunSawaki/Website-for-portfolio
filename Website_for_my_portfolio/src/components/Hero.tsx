@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import "../styles/Hero.css";
 
 /*
@@ -34,12 +34,12 @@ const Hero: React.FC = () => {
             I'm a university student passionate about computer technology. <br />This is the beginning of my engineering journey.
           </p>
           <div className="hero-buttons">
-            <Link to="works" smooth={false} duration={300}>
+            <ScrollLink to="works" smooth={false} duration={300}>
               <button className="btn primary-btn">View My Work</button>
-            </Link>
-            <Link to="contact" smooth={false} duration={300}>
+            </ScrollLink>
+            <ScrollLink to="contact" smooth={false} duration={300}>
               <button className="btn secondary-btn">Contact Me</button>
-            </Link>
+            </ScrollLink>
           </div>
         </motion.div>
       </div>
