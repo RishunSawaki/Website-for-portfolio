@@ -8,7 +8,66 @@ import "../styles/About.css";
   - Uses Framer Motion's `motion.div` with `whileInView` to fade content into view when scrolled.
 */
 
-const About: React.FC = () => {
+interface EducationItem {
+  id: number;
+  institution: string;
+  degree: string;
+  period: string;
+}
+
+interface CertificationItem {
+  id: number;
+  title: string;
+  date: string;
+}
+
+interface SkillCategory {
+  id: number;
+  name: string;
+  items: string[];
+}
+
+const educations: EducationItem[] = [
+  {
+    id: 1,
+    institution: "Kobe University, Japan",
+    degree: "Bachelor of Electrical and Electronic Engineering",
+    period: "March 2026 – Present",
+  },
+  {
+    id: 2,
+    institution: "Tampere University, Finland",
+    degree: "Exchange Student of Information Technology and Communication Sciences",
+    period: "August 2025 – May 2026 (1 year programme)",
+  }
+];
+
+const certifications: CertificationItem[] = [
+  {
+    id: 1,
+    title: "TOEIC Listening & Reading IP: 770",
+    date: "May 2024 (First-year student)",
+  },
+  {
+    id: 2,
+    title: "IELTS: 6.5",
+    date: "December 2024 (First-year student)",
+  }
+];
+
+const skills: SkillCategory[] = [
+  { id: 1, name: "HTML", items: ["Portfolio website"] },
+  { id: 2, name: "CSS", items: ["Portfolio website"] },
+  { id: 3, name: "JavaScript", items: ["Portfolio website"] },
+  { id: 4, name: "React", items: ["Portfolio website"] }
+];
+
+const basicKnowledge: SkillCategory[] = [
+  { id: 1, name: "Python", items: ["I learned it by myself and used it in a lecture of the machine learning."] },
+  { id: 2, name: "C", items: ["I learned it in a lecture."] }
+];
+
+const About = (): JSX.Element => {
   return (
     <section id="about" className="about">
       <div className="container">
@@ -29,45 +88,32 @@ const About: React.FC = () => {
             <div className="about-card">
               <h3>Education & Career</h3>
               <ul>
-                <li>
-                  <strong>
-                    Kobe University, Japan
-                    <br />
-                    Bachelor of Electrical and Electronic Engineering
-                    <br />
-                    March 2026 – Present
-                  </strong>
-                </li>
-                <li>
-                  <strong>
-                    Tampere University, Finland
-                    <br />
-                    Exchange Student of Information Technology and Communication
-                    Sciences
-                    <br />
-                    August 2025 – May 2026 (1 year programme)
-                  </strong>
-                </li>
+                {educations.map((edu) => (
+                  <li key={edu.id}>
+                    <strong>
+                      {edu.institution}
+                      <br />
+                      {edu.degree}
+                      <br />
+                      {edu.period}
+                    </strong>
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div className="about-card">
               <h3>Certifications</h3>
               <ul>
-                <li>
-                  <strong>
-                    TOEIC Listening & Reading IP: 770
-                    <br />
-                    May 2024 (First-year student)
-                  </strong>
-                </li>
-                <li>
-                  <strong>
-                    IELTS: 6.5
-                    <br />
-                    December 2024 (First-year student)
-                  </strong>
-                </li>
+                {certifications.map((cert) => (
+                  <li key={cert.id}>
+                    <strong>
+                      {cert.title}
+                      <br />
+                      {cert.date}
+                    </strong>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -78,55 +124,32 @@ const About: React.FC = () => {
                   This allows easier vertical spacing and per-skill layout control.
                 */}
               <div className="skills-container">
-                <div className="skill-item">
-                  <strong>HTML</strong>
-                  <ul>
-                    <li>Portfolio website</li>
-                  </ul>
-                </div>
-
-                <div className="skill-item">
-                  <strong>CSS</strong>
-                  <ul>
-                    <li>Portfolio website</li>
-                  </ul>
-                </div>
-
-                <div className="skill-item">
-                  <strong>JavaScript</strong>
-                  <ul>
-                    <li>Portfolio website</li>
-                  </ul>
-                </div>
-
-                <div className="skill-item">
-                  <strong>React</strong>
-                  <ul>
-                    <li>Portfolio website</li>
-                  </ul>
-                </div>
+                {skills.map((skill) => (
+                  <div className="skill-item" key={skill.id}>
+                    <strong>{skill.name}</strong>
+                    <ul>
+                      {skill.items.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
 
             <div className="about-card">
               <h3>Basic knowledge</h3>
               <div className="skills-container">
-                <div className="skill-item">
-                  <strong>Python</strong>
-                  <ul>
-                    <li>
-                      I learned it by myself and used it in a lecture of the
-                      machine learning.
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="skill-item">
-                  <strong>C</strong>
-                  <ul>
-                    <li>I learned it in a lecture.</li>
-                  </ul>
-                </div>
+                {basicKnowledge.map((knowledge) => (
+                  <div className="skill-item" key={knowledge.id}>
+                    <strong>{knowledge.name}</strong>
+                    <ul>
+                      {knowledge.items.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

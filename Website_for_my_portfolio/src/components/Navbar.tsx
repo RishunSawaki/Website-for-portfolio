@@ -12,11 +12,18 @@ import "../styles/Navbar.css";
   - Icons come from `react-icons/fa` and render as SVGs.
 */
 
-const Navbar: React.FC = () => {
-  const [nav, setNav] = useState<boolean>(false);
-  const handleClick = () => setNav(!nav);
+interface NavLink {
+  id: number;
+  link: string;
+  text: string;
+}
 
-  const links = [
+const Navbar = (): JSX.Element => {
+  const [nav, setNav] = useState<boolean>(false);
+  const handleClick = (): void => setNav((prev) => !prev);
+  const closeMenu = (): void => setNav(false);
+
+  const links: NavLink[] = [
     { id: 1, link: "home", text: "Home" },
     { id: 2, link: "about", text: "About" },
     { id: 3, link: "works", text: "Works" },
@@ -54,7 +61,7 @@ const Navbar: React.FC = () => {
         {links.map(({ id, link, text }) => (
           <li key={id} className="mobile-item">
             <ScrollLink
-              onClick={() => setNav(false)}
+              onClick={closeMenu}
               to={link}
               smooth={true}
               duration={500}

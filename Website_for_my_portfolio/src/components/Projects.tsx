@@ -17,20 +17,20 @@ interface Work {
   demo: string;
 }
 
-const Projects: React.FC = () => {
-  const works: Work[] = [
-    {
-      id: 1,
-      title: "Portfolio Website",
-      description:
-        "The website you are looking at right now. Built with React and Vite to introduce myself and showcase my projects.",
-      techStack: ["HTML", "CSS", "React", "Vite", "Framer Motion"],
-      github: "https://github.com/rishun", // Placeholder
-      demo: "#",
-    },
-    // Add more projects here in the future
-  ];
+const works: Work[] = [
+  {
+    id: 1,
+    title: "Portfolio Website",
+    description:
+      "The website you are looking at right now. Built with React and Vite to introduce myself and showcase my projects.",
+    techStack: ["HTML", "CSS", "React", "Vite", "Framer Motion"],
+    github: "https://github.com/rishun", // Placeholder
+    demo: "#",
+  },
+  // Add more projects here in the future
+];
 
+const Projects = (): JSX.Element => {
   return (
     <section id="works" className="projects">
       <div className="container">

@@ -6,7 +6,7 @@
 import React from "react";
 import "../styles/Footer.css";
 
-const Footer: React.FC = () => {
+const Footer = (): JSX.Element => {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">

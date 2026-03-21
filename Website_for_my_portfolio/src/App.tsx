@@ -7,7 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./App.css";
 
-const App: React.FC = () => {
+const App = (): JSX.Element => {
   return (
     <div className="App">
       <Navbar />

@@ -10,7 +10,7 @@ import "../styles/Hero.css";
   - Buttons use `react-scroll` to scroll to other page sections smoothly.
 */
 
-const Hero: React.FC = () => {
+const Hero = (): JSX.Element => {
   return (
     <section id="home" className="hero">
       <div className="hero-content">

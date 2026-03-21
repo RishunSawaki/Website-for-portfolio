@@ -9,8 +9,36 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "../styles/Contact.css";
 
-const Contact: React.FC = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+interface SocialLink {
+  id: number;
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}
+
+const socialLinks: SocialLink[] = [
+  {
+    id: 1,
+    href: "mailto:rikomake@icloud.com",
+    icon: <FaEnvelope size={24} />,
+    label: "Email Me",
+  },
+  {
+    id: 2,
+    href: "https://github.com/RishunSawaki",
+    icon: <FaGithub size={24} />,
+    label: "GitHub",
+  },
+  {
+    id: 3,
+    href: "https://linkedin.com/in/rishun-sawaki",
+    icon: <FaLinkedin size={24} />,
+    label: "LinkedIn",
+  },
+];
+
+const Contact = (): JSX.Element => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     alert("Thank you for your message! This is a demo form.");
     // Integrate EmailJS or another service here
@@ -36,28 +64,18 @@ const Contact: React.FC = () => {
           <div className="contact-content">
             <div className="contact-info">
               <div className="social-links">
-                <a href="mailto:rikomake@icloud.com" className="social-item">
-                  <FaEnvelope size={24} />
-                  <span>Email Me</span>
-                </a>
-                <a
-                  href="https://github.com/RishunSawaki"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-item"
-                >
-                  <FaGithub size={24} />
-                  <span>GitHub</span>
-                </a>
-                <a
-                  href="https://linkedin.com/in/rishun-sawaki"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-item"
-                >
-                  <FaLinkedin size={24} />
-                  <span>LinkedIn</span>
-                </a>
+                {socialLinks.map(({ id, href, icon, label }) => (
+                  <a
+                    key={id}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-item"
+                  >
+                    {icon}
+                    <span>{label}</span>
+                  </a>
+                ))}
               </div>
             </div>
 
