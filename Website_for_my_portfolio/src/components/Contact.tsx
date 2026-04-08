@@ -4,7 +4,7 @@
   `handleSubmit` currently prevents default submission and shows a demo alert.
   Replace submission logic with EmailJS or an API call as needed.
 */
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "../styles/Contact.css";
@@ -38,10 +38,34 @@ const socialLinks: SocialLink[] = [
 ];
 
 const Contact = (): JSX.Element => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    alert("Thank you for your message! This is a demo form.");
-    // Integrate EmailJS or another service here
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    setStatus("submitting");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mykbvvny", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -110,9 +134,21 @@ const Contact = (): JSX.Element => {
                   placeholder="Your Message"
                 ></textarea>
               </div>
-              <button type="submit" className="btn submit-btn">
-                Send Message
+              
+              <button 
+                type="submit" 
+                className="btn submit-btn" 
+                disabled={status === "submitting"}
+              >
+                {status === "submitting" ? "Submitting..." : "Send Message"}
               </button>
+              
+              {status === "success" && (
+                <p className="form-message success-message">Message sent successfully!</p>
+              )}
+              {status === "error" && (
+                <p className="form-message error-message">Failed to send message.</p>
+              )}
             </form>
           </div>
         </motion.div>
