@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
+import { useLanguage } from "../contexts/LanguageContext";
 import "../styles/Hero.css";
 
 /*
@@ -11,6 +12,8 @@ import "../styles/Hero.css";
 */
 
 const Hero = (): JSX.Element => {
+  const { t } = useLanguage();
+
   return (
     <section id="home" className="hero">
       <div className="hero-content">
@@ -25,20 +28,20 @@ const Hero = (): JSX.Element => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="hero-subtitle">Hi, my name is</p>
-          <h1 className="hero-title">Rishun.</h1>
+          <p className="hero-subtitle">{t.hero.subtitle}</p>
+          <h1 className="hero-title">{t.hero.title}</h1>
           <h2 className="hero-role">
-            Electrical and Electronic Engineering student
+            {t.hero.role}
           </h2>
-          <p className="hero-description">
-            I'm a university student passionate about computer technology. <br />This is the beginning of my engineering journey.
+          <p className="hero-description" style={{ whiteSpace: "pre-wrap" }}>
+            {t.hero.description}
           </p>
           <div className="hero-buttons">
             <ScrollLink to="works" smooth={false} duration={300}>
-              <button className="btn primary-btn">View My Work</button>
+              <button className="btn primary-btn">{t.hero.btnWork}</button>
             </ScrollLink>
             <ScrollLink to="contact" smooth={false} duration={300}>
-              <button className="btn secondary-btn">Contact Me</button>
+              <button className="btn secondary-btn">{t.hero.btnContact}</button>
             </ScrollLink>
           </div>
         </motion.div>

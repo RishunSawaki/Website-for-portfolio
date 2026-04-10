@@ -6,31 +6,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useLanguage } from "../contexts/LanguageContext";
 import "../styles/Projects.css";
 
-interface Work {
-  id: number;
-  title: string;
-  description: string;
-  techStack: string[];
-  github: string;
-  demo: string;
-}
-
-const works: Work[] = [
-  {
-    id: 1,
-    title: "Portfolio Website",
-    description:
-      "The website you are looking at right now. Built with React and Vite to introduce myself and showcase my projects.",
-    techStack: ["HTML", "CSS", "React", "Vite", "Framer Motion"],
-    github: "https://github.com/rishun", // Placeholder
-    demo: "#",
-  },
-  // Add more projects here in the future
-];
-
 const Projects = (): JSX.Element => {
+  const { t } = useLanguage();
+
   return (
     <section id="works" className="projects">
       <div className="container">
@@ -41,41 +22,42 @@ const Projects = (): JSX.Element => {
           viewport={{ once: true }}
         >
           {/* Projects section: title + project cards grid */}
-          <h2 className="section-title">My Works</h2>
+          <h2 className="section-title">{t.projects.title}</h2>
           <div className="projects-grid">
-            {works.map((work) => (
-              <div key={work.id} className="project-card">
+            {t.projects.works.map((work, idx) => (
+              <div key={idx} className="project-card">
                 <div className="project-info">
                   <h3>{work.title}</h3>
                   <p>{work.description}</p>
                   <div className="tech-stack">
-                    {work.techStack.map((tech, index) => (
+                    {/* Reusing hardcoded techStack for now as technologies don't typically need translation */}
+                    {["HTML", "CSS", "React", "Vite", "Framer Motion"].map((tech, index) => (
                       <span key={index}>{tech}</span>
                     ))}
                   </div>
                   <div className="project-links">
                     <a
-                      href={work.github}
+                      href="https://github.com/rishun"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaGithub size={20} /> Code
+                      <FaGithub size={20} /> {t.projects.code}
                     </a>
 
                     <a
-                      href={work.demo}
+                      href="#"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaExternalLinkAlt size={18} /> Live Demo
+                      <FaExternalLinkAlt size={18} /> {t.projects.liveDemo}
                     </a>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          {works.length === 1 && (
-            <p className="coming-soon">More projects coming soon!</p>
+          {t.projects.works.length === 1 && (
+            <p className="coming-soon">{t.projects.comingSoon}</p>
           )}
         </motion.div>
       </div>
