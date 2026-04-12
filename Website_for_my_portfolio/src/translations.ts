@@ -10,7 +10,7 @@ export const translations = {
       subtitle: "Hi, my name is",
       title: "Rishun.",
       role: "Electrical and Electronic Engineering student",
-      description: "I'm a university student passionate about computer technology. \nThis is the beginning of my engineering journey.",
+      description: "I'm a university student passionate about computer technology.",
       btnWork: "View My Work",
       btnContact: "Contact Me"
     },
@@ -21,7 +21,7 @@ export const translations = {
         {
           institution: "Kobe University, Japan",
           degree: "Bachelor of Electrical and Electronic Engineering",
-          period: "March 2026 – Present"
+          period: "April 2024 – Present"
         },
         {
           institution: "Tampere University, Finland",
@@ -39,7 +39,8 @@ export const translations = {
         { name: "HTML", items: ["Portfolio website"] },
         { name: "CSS", items: ["Portfolio website"] },
         { name: "JavaScript", items: ["Portfolio website"] },
-        { name: "React", items: ["Portfolio website"] }
+        { name: "React", items: ["Portfolio website"] },
+        { name: "TypeScript", items: ["Portfolio website"]}
       ],
       basicKnowledge: "Basic Knowledge",
       basicItems: [
@@ -79,25 +80,25 @@ export const translations = {
   },
   ja: {
     navbar: {
-      portfolio: "ポートフォリオ",
-      links: { home: "ホーム", about: "私について", works: "制作物", contact: "お問い合わせ" }
+      portfolio: "Portfolio",
+      links: { home: "ホーム", about: "自己紹介", works: "制作物", contact: "お問い合わせ" }
     },
     hero: {
       subtitle: "はじめまして、",
-      title: "Rishun です。",
-      role: "電気電子工学科の学生",
-      description: "コンピュータ技術に情熱を持つ大学生です。\nここから私のエンジニアとしてのキャリアが始まります。",
-      btnWork: "制作物を見る",
+      title: "佐脇利駿、",
+      role: "電気電子工学科の学生です",
+      description: "コンピュータ技術に情熱を持つ大学生です",
+      btnWork: "制作物",
       btnContact: "お問い合わせ"
     },
     about: {
-      title: "私について",
+      title: "自己紹介",
       eduCareer: "学歴・経歴",
       educations: [
         {
           institution: "神戸大学",
           degree: "工学部 電気電子工学科",
-          period: "2026年3月 – 現在"
+          period: "2024年4月 – 現在"
         },
         {
           institution: "タンペレ大学（フィンランド）",
@@ -115,7 +116,8 @@ export const translations = {
         { name: "HTML", items: ["ポートフォリオサイト"] },
         { name: "CSS", items: ["ポートフォリオサイト"] },
         { name: "JavaScript", items: ["ポートフォリオサイト"] },
-        { name: "React", items: ["ポートフォリオサイト"] }
+        { name: "React", items: ["ポートフォリオサイト"] },
+        { name: "TypeScript", items: ["ポートフォリオサイト"] }
       ],
       basicKnowledge: "基礎知識",
       basicItems: [
