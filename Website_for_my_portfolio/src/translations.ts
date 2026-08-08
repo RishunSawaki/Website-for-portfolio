@@ -8,7 +8,7 @@ export const translations = {
     },
     hero: {
       subtitle: "Hi, my name is",
-      title: "Rishun.",
+      title: "Uri.",
       role: "Electrical and Electronic Engineering student",
       description: "I'm a university student passionate about computer technology.",
       btnWork: "View My Work",
@@ -32,7 +32,8 @@ export const translations = {
       certifications: "Certifications",
       certItems: [
         { title: "TOEIC Listening & Reading IP: 770", date: "May 2024 (First-year student)" },
-        { title: "IELTS: 6.5", date: "December 2024 (First-year student)" }
+        { title: "IELTS: 6.5", date: "December 2024 (First-year student)" },
+        { title: "Fundamental Information Technology Engineer Examination (FE)", date: "July 2026 (Third-year student)" }
       ],
       skills: "Skills",
       skillItems: [
@@ -85,7 +86,7 @@ export const translations = {
     },
     hero: {
       subtitle: "はじめまして、",
-      title: "佐脇利駿、",
+      title: "私の名前はUri、",
       role: "電気電子工学科の学生です",
       description: "コンピュータ技術に情熱を持つ大学生です",
       btnWork: "制作物",
@@ -109,7 +110,8 @@ export const translations = {
       certifications: "資格",
       certItems: [
         { title: "TOEIC Listening & Reading IP: 770", date: "2024年5月取得（大学1年）" },
-        { title: "IELTS: 6.5", date: "2024年12月取得（大学1年）" }
+        { title: "IELTS: 6.5", date: "2024年12月取得（大学1年）" },
+        { title: "基本情報技術者試験（FE）", date: "2026年7月取得（大学3年）" }
       ],
       skills: "スキル",
       skillItems: [
